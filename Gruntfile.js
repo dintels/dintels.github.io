@@ -1,5 +1,5 @@
 // Generated on 2014-10-07 using
-// generator-webapp 0.5.0
+// generator-lessapp 0.5.0
 'use strict';
 
 // # Globbing
@@ -34,19 +34,20 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-      js: {
-        files: ['<%= config.app %>/scripts/{,*/}*.js'],
-        tasks: ['jshint'],
-        options: {
-          livereload: true
-        }
+      coffee: {
+        files: ['<%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['coffee:dist']
       },
-      jstest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['test:watch']
+      coffeeTest: {
+        files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['coffee:test', 'test:watch']
       },
       gruntfile: {
         files: ['Gruntfile.js']
+      },
+      less: {
+        files: ['<%= config.app %>/styles/{,*/}*.less'],
+        tasks: ['less:server', 'autoprefixer']
       },
       styles: {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
@@ -59,6 +60,7 @@ module.exports = function (grunt) {
         files: [
           '<%= config.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
+          '.tmp/scripts/{,*/}*.js',
           '<%= config.app %>/images/{,*/}*'
         ]
       }
@@ -79,6 +81,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use('/bower_components', connect.static('./bower_components')),
+              connect().use('/fonts', connect.static('<%= config.app %>/bower_components/bootstrap/dist/fonts')),
+              connect().use('/startup', connect.static('./startup')),
               connect.static(config.app)
             ];
           }
@@ -93,6 +97,8 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect.static('test'),
               connect().use('/bower_components', connect.static('./bower_components')),
+              connect().use('/fonts', connect.static('./bower_components/bootstrap/dist/fonts')),
+              connect().use('/startup', connect.static('<%= config.app %>/startup')),
               connect.static(config.app)
             ];
           }
@@ -145,6 +151,62 @@ module.exports = function (grunt) {
       }
     },
 
+    // Compiles CoffeeScript to JavaScript
+    coffee: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/scripts',
+          src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+          dest: '.tmp/scripts',
+          ext: '.js'
+        }]
+      },
+      test: {
+        files: [{
+          expand: true,
+          cwd: 'test/spec',
+          src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+          dest: '.tmp/spec',
+          ext: '.js'
+        }]
+      }
+    },
+
+    // Compiles LESS to CSS and generates necessary files if requested
+    less: {
+      options: {
+        paths: ['./bower_components'],
+      },
+      dist: {
+        options: {
+          cleancss: true,
+          report: 'gzip'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: '*.less',
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      server: {
+        options: {
+          sourceMap: true,
+          sourceMapBasepath: '<%= config.app %>/',
+          sourceMapRootpath: '../'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: '*.less',
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
+    },
+
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
@@ -166,6 +228,10 @@ module.exports = function (grunt) {
         ignorePath: /^\/|\.\.\//,
         src: ['<%= config.app %>/index.html'],
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+      },
+      less: {
+        src: ['<%= config.app %>/styles/{,*/}*.less'],
+        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -194,10 +260,14 @@ module.exports = function (grunt) {
       html: '<%= config.app %>/index.html'
     },
 
-    // Performs rewrites based on rev and the useminPrepare configuration
+     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       options: {
-        assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+        assetsDirs: [
+          '<%= config.dist %>',
+          '<%= config.dist %>/images',
+          '<%= config.dist %>/styles'
+        ]
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
       css: ['<%= config.dist %>/styles/{,*/}*.css']
@@ -297,6 +367,16 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= config.dist %>'
+        },
+        {
+          expand: true,
+          dot: true,
+          cwd: 'startup',
+          dest: '<%= config.dist %>/startup',
+          src: [
+            'common-files/**',
+            'flat-ui/**'
+          ]
         }]
       },
       styles: {
@@ -311,12 +391,17 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
+        'less:server',
+        'coffee:dist',
         'copy:styles'
       ],
       test: [
+        'coffee',
         'copy:styles'
       ],
       dist: [
+        'coffee',
+        'less:dist',
         'copy:styles',
         'imagemin',
         'svgmin'

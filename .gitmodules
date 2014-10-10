@@ -1,0 +1,3 @@
+[submodule "startup"]
+	path = startup
+	url = https://github.com/designmodo/startup.git

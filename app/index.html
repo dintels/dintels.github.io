@@ -1,98 +1,318 @@
-<!doctype html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>site</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Домашние интеллектуальные системы</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <!-- endbuild -->
+  <link rel="stylesheet" href="startup/flat-ui/css/flat-ui.css">
+  <link rel="stylesheet" href="startup/common-files/css/icon-font.css">
+  <link rel="stylesheet" href="startup/common-files/css/animations.css">
+  <link rel="stylesheet" href="styles/startup.css">
 
+  <link rel="stylesheet" href="styles/main.css">
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">site</h3>
-      </div>
+</head>
 
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
-      </div>
+<body>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-
-
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-
+  <div class="page-wrapper">
+    <header class="header-15 hidden">
+      <div class="container">
+        <div class="row">
+          <div class="navbar col-sm-12" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle"></button>
+              <a class="brand" href="#">Домашние интеллектуальные системы</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              <form class="navbar-form pull-right">
+                <a class="btn" href="#">TRY IT</a>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="header-background"></div>
+    </header>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+    <section class="content-23 first bg-midnight-blue">
+      <div class="holder v-center">
+        <div>
+          <div class="container">
+            <div class="hero-unit hero-unit-bordered">
+              <h1>
+                <div id="pic" style="float:left;">
+                  <img src="images/logo.png" />
+                </div>
+                <div style="margin-left: 160px; text-align:left;">
+                  <strong>Домашние<br/> интеллектуальные<br/> системы</strong>
+                </div>
+              </h1>
+              <p></p>
+            </div>
+          </div>
+        </div>
       </div>
+      <a class="control-btn fui-arrow-down" href="#"> </a>
+    </section>
 
+    <section class="projects-2">
+      <div class="project-1 v-center" id="projects">
+        <div>
+          <div class="container">
+            <h1>Проекты</h1>
+            <p>Автоматизация, Умный дом</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-1 v-center" id="devices">
+        <div>
+          <div class="container">
+            <h1>Оборудование</h1>
+            <p>Ноотехника, Разумный дом, Theben и другие интересные вещи</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-1 v-center" id="vacuum_cleaners">
+        <div><!--v-center-->
+          <div class="container">
+            <div class="hero-unit">
+              <h1>Встроенные пылесосы Beam Electrolux</h1>
+            </div>
+          </div>
+          <!--/.container-->
+        </div>
+        <!--/v-center-->
+      </div>
+    </section>
+    <section class="crew-1">
+      <div class="container">
+        <h3>Наша команда</h3>
+
+        <div class="members">
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/vladimir-k.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Алексей Титов</div>
+                Основатель
+              </div>
+            </div>
+          </div>
+
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/sergey-s.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Михаил Мац</div>
+                Руководитель
+              </div>
+            </div>
+          </div>
+
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/adrian-v.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Алексей Качалов</div>
+                Ведущий инженер
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="members">
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/edvard-k.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Павел Лобач</div>
+                Инженер
+              </div>
+            </div>
+          </div>
+
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/oxana-n.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Алексей Скотников</div>
+                Программист
+              </div>
+            </div>
+          </div>
+
+          <div class="member-wrapper">
+            <div class="member">
+              <div class="photo-wrapper">
+                <div class="photo"><img src="startup/common-files/img/crew/tatiana-y.png" alt=""></div>
+                <div class="overlay"><span class="fui-eye"></span></div>
+              </div>
+              <div class="info">
+                <div class="name">Алексей Бобков</div>
+                Ведущий инженер
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.container-->
+    </section><section class="content-12">
+      <a class="wide btn-wide" href="#"><b>Посмотрите завершенные проекты</b></a>
+    </section><section class="contacts-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <h3>Мы любим то, что мы делаем. <br> Напишите нам!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <form>
+              <label class="h6">Имя</label>
+              <input type="text" class="form-control">
+              <label class="h6">E-mail</label>
+              <input type="text" class="form-control">
+              <label class="h6">Сообщение</label>
+              <textarea rows="6" class="form-control"></textarea>
+              <button type="submit" class="btn btn-primary"><span class="fui-mail"></span></button>
+            </form>
+          </div>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <h6>Где нас найти?</h6>
+            <p>150049, город Ярославль, улица Всполинское поле, дом 14.</p>
+            <p>С понедельника по пятницу с <strong>9:00</strong> до <strong>18:00</strong>.</p>
+            <p>В субботу с <strong>10:00</strong> до <strong>15:00</strong>.</p>
+            <p>В праздники выходной.</p>
+            <div class="map">
+              <!--map-->
+              <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2136.723174920366!2d39.84015396745912!3d57.61918981364849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b293c44d512977%3A0x33bbc986555c3091!2z0YPQuy4g0JLRgdC_0L7Qu9C40L3RgdC60L7QtSDQv9C-0LvQtSwgMTQsINCv0YDQvtGB0LvQsNCy0LvRjCwg0K_RgNC-0YHQu9Cw0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sru!4v1404828708734" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </div>
+            <h6>Всегда на связи</h6>
+            <div class="links">
+              <a href="#"><span class="fui-phone"></span>+7 (4852) 68-04-06</a><br>
+              <a href="#"><span class="fui-mail"></span>mail@dintels.ru</a><br>
+              <a href="#"><span class="fui-skype"></span>dintels</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer-1 bg-midnight-blue">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5">
+            <p class="lead"><b>200,000</b> users registered since January</p>
+            We’ve created the product that will help your startup to look even better.
+            <div class="social-btns">
+              <a href="#" class="social-btn-facebook" data-text="Startup Design Framework - http://designmodo.com/startup/ Suit Up your Startup!" data-url="http://designmodo.com/startup/">
+                <div class="fui-facebook"></div>
+                <div class="fui-facebook"></div>
+              </a>
+              <a href="#" class="social-btn-twitter" data-text="Startup Design Framework - http://designmodo.com/startup/ Suit Up your Startup!" data-url="http://designmodo.com/startup/">
+                <div class="fui-twitter"></div>
+                <div class="fui-twitter"></div>
+              </a>
+            </div>
+          </div>
+          <nav>
+            <div class="col-sm-2 col-sm-offset-1">
+              <h6>Разделы</h6>
+              <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Проекты</a></li>
+                <li><a href="#">Оборудование</a></li>
+                <li><a href="#">Встроенные пылесосы</a></li>
+                <li><a href="#">Портфолио</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-2">
+              <h6>Присоединяйтесь</h6>
+              <ul>
+                <li><a href="#">Вконтакте</a></li>
+                <li><a href="#">Одноклассники</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="col-sm-2 buy-btn">
+            <a class="btn btn-danger btn-block" href="#">Buy App</a>
+            or <a href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="row">
+          <!--<div class="col-sm-5 additional-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Special Terms</a>
+          <a href="#">Privacy Policy</a>
+        -->
+        <div class="col-sm-5 additional-links">
+          Сайт разработан силами <a href="#">ООО "Домашние интеллектуальные системы"</a> 2014
+        </div>
+      </div>
     </div>
+  </footer>
+</div>
 
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<!-- Placed at the end of the document so the pages load faster -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<script src="startup/common-files/js/jquery.bxslider.min.js"></script>
+<script src="startup/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script src="startup/common-files/js/jquery.sharrre.min.js"></script>
+<script src="startup/common-files/js/jquery.svg.js"></script>
+<script src="startup/common-files/js/jquery.svganim.js"></script>
+<script src="startup/common-files/js/jquery.backgroundvideo.min.js"></script>
+<script src="startup/common-files/js/jquery.parallax.min.js"></script>
+<script src="startup/common-files/js/masonry.pkgd.min.js"></script>
+<script src="startup/common-files/js/modernizr.custom.js"></script>
+<script src="startup/common-files/js/page-transitions.js"></script>
+<script src="startup/common-files/js/easing.min.js"></script>
+<script src="startup/common-files/js/froogaloop.min.js"></script>
+<script src="startup/common-files/js/startup-kit.js"></script>
+<script src="scripts/script.js"></script>
 
-        <!-- build:js(.) scripts/plugins.js -->
-        <script src="bower_components/bootstrap/js/affix.js"></script>
-        <script src="bower_components/bootstrap/js/alert.js"></script>
-        <script src="bower_components/bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/bootstrap/js/modal.js"></script>
-        <script src="bower_components/bootstrap/js/transition.js"></script>
-        <script src="bower_components/bootstrap/js/button.js"></script>
-        <script src="bower_components/bootstrap/js/popover.js"></script>
-        <script src="bower_components/bootstrap/js/carousel.js"></script>
-        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/bootstrap/js/collapse.js"></script>
-        <script src="bower_components/bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

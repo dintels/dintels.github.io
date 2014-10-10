@@ -1,89 +1,53 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/* навигация */
+.navbar .navbar-collapse {
+  padding-top: 4px;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.navbar-header a{
+
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+/* начало страницы*/
+.content-23 {
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+.content-23 .hero-unit h1 {
+  line-height: 50px;
+  /* ФОН */
+  background: rgba(128, 128, 128, 0.9);
+}
+.content-23.first {
+   background: url("/images/lamps.jpg") no-repeat fixed 50% 50% #1b1f23;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+/*раздел проектов*/
+.projects-2 #projects {
+   background-image: url('../tmp/stock-vector-vector-blue-architectural-background-with-plans-of-buildings-on-the-horizontal-format-178365125.jpg');
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+/*раздел оборудования*/
+.projects-2 #devices {
+   background-image: url('../tmp/stock-photo-new-control-panel-with-electrical-equipment-187640873.jpg');
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.projects-2 #devices .hero-unit {
+   background-color: rgba(128,128,128,0.75);
+
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+.projects-2 #devices .hero-unit > *{
+   text-align:center;
 }
 
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+/*раздел пылесосов*/
+.projects-2 #vacuum_cleaners {
+   background-image: url('../tmp/Platinum_family.jpg');
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.projects-2 #vacuum_cleaners h1 {
+   background-color: rgba(128,128,128,0.75);
 }
