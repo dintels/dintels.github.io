@@ -1,0 +1,11 @@
+---
+layout: startup_page
+title: Корпоративный блог ООО "Домашние интеллектуальные системы"
+---
+
+<section class="home posts">
+<h1>Blog Posts CHANGED!</h1>
+{% for post in site.posts %}
+<article><time>{{ post.date | date_to_string }}</time> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></article>
+{% endfor %}
+</section>
