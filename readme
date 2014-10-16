@@ -1,0 +1,12 @@
+Подготовка репозитория:
+
+git checkout develop 
+git submodule update --recursive
+npm install
+bower install
+
+Запуск сервера для разработки на порту 9000 и 35729
+grunt serve
+
+Размещение сайте
+grunt deploy
