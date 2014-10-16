@@ -1,0 +1,53 @@
+/* навигация */
+.navbar .navbar-collapse {
+  padding-top: 4px;
+}
+
+.navbar-header a{
+
+}
+
+/* начало страницы*/
+.content-23 {
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+
+.content-23 .hero-unit h1 {
+  line-height: 50px;
+  /* ФОН */
+  background: rgba(128, 128, 128, 0.9);
+}
+.content-23.first {
+   background: url("/images/lamps.jpg") no-repeat fixed 50% 50% #1b1f23;
+}
+
+/*раздел проектов*/
+.projects-2 #projects {
+   background-image: url('../tmp/stock-vector-vector-blue-architectural-background-with-plans-of-buildings-on-the-horizontal-format-178365125.jpg');
+}
+
+/*раздел оборудования*/
+.projects-2 #devices {
+   background-image: url('../tmp/stock-photo-new-control-panel-with-electrical-equipment-187640873.jpg');
+}
+
+.projects-2 #devices .hero-unit {
+   background-color: rgba(128,128,128,0.75);
+
+}
+
+.projects-2 #devices .hero-unit > *{
+   text-align:center;
+}
+
+/*раздел пылесосов*/
+.projects-2 #vacuum_cleaners {
+   background-image: url('../tmp/Platinum_family.jpg');
+}
+
+.projects-2 #vacuum_cleaners h1 {
+   background-color: rgba(128,128,128,0.75);
+}
