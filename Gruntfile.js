@@ -370,6 +370,14 @@ module.exports = function (grunt) {
         'flat-ui/**',
         '!flat-ui/.git'
         ]
+      },
+                    {
+        expand: true,
+        dot: true,
+        dest: '<%= yeoman.dist %>/',
+        src: [
+        '.nojekyll',
+        ]
       }
       ]
     },
