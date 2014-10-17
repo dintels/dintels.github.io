@@ -17,8 +17,9 @@
 <script src="/startup/common-files/js/page-transitions.js"></script>
 <script src="/startup/common-files/js/startup-kit.js"></script>
 
-
-
+{% for script in page.scripts %}
+  <script src="{{ script }}"></script>
+{% endfor %}
 
 <!-- <script src="/scripts/main.js"></script> -->
 <!-- <script src="/scripts/script.js"></script> -->

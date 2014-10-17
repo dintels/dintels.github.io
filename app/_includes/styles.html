@@ -14,6 +14,9 @@
 
 <link rel="stylesheet" href="/startup/common-files/css/icon-font.css">
 
+{% for style in page.styles %}
+  <link rel="stylesheet" href="{{ style }}">
+{% endfor %}
+
 <!-- <link rel="stylesheet" href="/styles/main.css"> -->
 <!-- <link rel="stylesheet" href="/styles/style.css"> -->
-
