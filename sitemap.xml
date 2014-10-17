@@ -14,6 +14,10 @@
     </url>
     <url>
         <loc>dintels.github.com/</loc>
+        <lastmod>2014-10-17T11:59:38+00:00</lastmod>
+    </url>
+    <url>
+        <loc>dintels.github.com/vacuum/</loc>
         <lastmod>2014-10-16T07:49:45+00:00</lastmod>
     </url>
     <url>
@@ -21,12 +25,12 @@
         <lastmod>2014-10-16T07:49:45+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/vacuum/</loc>
+        <loc>dintels.github.com/blog/</loc>
         <lastmod>2014-10-16T07:49:45+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/blog/</loc>
-        <lastmod>2014-10-16T07:49:45+00:00</lastmod>
+        <loc>dintels.github.com/index_new.html</loc>
+        <lastmod>2014-10-17T11:10:49+00:00</lastmod>
     </url>
     <url>
         <loc>dintels.github.com/index_old.html</loc>
