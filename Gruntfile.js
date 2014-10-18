@@ -265,8 +265,8 @@ module.exports = function (grunt) {
     options: {
       assetsDirs: '<%= yeoman.dist %>',
     },
-    html: ['<%= yeoman.dist %>/**/*.html'],
-    css: ['<%= yeoman.dist %>/styles/**/*.css']
+    html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/startup/**/*'],
+    css: ['<%= yeoman.dist %>/styles/**/*.css', '!<%= yeoman.dist %>/startup/**/*']
   },
   htmlmin: {
     dist: {
@@ -304,7 +304,7 @@ module.exports = function (grunt) {
       files: [{
         expand: true,
         cwd: '<%= yeoman.dist %>',
-        src: ['**/*.{jpg,jpeg,png}', '!startup/**'],
+        src: ['**/*.{jpg,jpeg,png}', '!startup/**', '!images/vacuum/**', '!images/illustrations/**'],
         dest: '<%= yeoman.dist %>'
       }]
     }
@@ -334,18 +334,22 @@ module.exports = function (grunt) {
         // Like Jekyll, exclude files & folders prefixed with an underscore.
         '!**/_*{,/**}',
         // Explicitly add any files your site needs for distribution here.
-//         '_bower_components/jquery/dist/jquery.js',
-//         '_bower_components/modernizr/modernizr.js',
-//         '_bower_components/bootstrap/dist/js/bootstrap.js',
         'favicon.ico',
         'apple-touch*.png',
-          
-        'startup/common-files/**',
-        'startup/flat-ui/*/**/*',
-        '!startup/flat-ui/.git'
-
         ],
         dest: '<%= yeoman.dist %>'
+      },
+      {
+        expand: true,
+        dot: true,
+        cwd: '<%= yeoman.app %>/startup',
+        dest: '<%= yeoman.dist %>/startup',
+        src: [
+        'common-files/**',
+        'flat-ui/*/**/*',
+        '!flat-ui/.git',
+         '!*/less/**', // ignore less folders
+        ]
       },
       {
         expand: true,
@@ -464,9 +468,9 @@ grunt.registerTask('serve', function (target) {
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
+     //'clean:server',
+     //'concurrent:test',
+     //'connect:test'
   ]);
 
   grunt.registerTask('check', [
@@ -490,8 +494,8 @@ grunt.registerTask('serve', function (target) {
   'autoprefixer:dist',
   'cssmin',
   'uglify',
-//   'imagemin',
-//   'svgmin',
+  'imagemin',
+  'svgmin',
   'filerev',
   'usemin',
   'htmlmin'
