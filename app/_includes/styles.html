@@ -1,4 +1,4 @@
-<!-- build:css({app,.tmp}) /styles/main.css -->
+<!-- build:css({app,.tmp}) /styles/site.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css" />
 <link rel="stylesheet" href="/_bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -9,6 +9,6 @@
 <!-- endbuild -->
 
 {% for style in page.styles %}
-  <link rel="stylesheet" href="{{ style }}">
+  <link rel="stylesheet" href="{{ style }}"/>
 {% endfor %}
 

@@ -2,7 +2,7 @@
 
 <script>window.jQuery || document.write('<script src="/_bower_components/jquery.js"><\/script>')</script> -->
 
-<!-- build:js({app,.tmp}) /scripts/script.js -->
+<!-- build:js({app,.tmp}) /scripts/site.js -->
 <!-- bower:js -->
 <script src="/_bower_components/modernizr/modernizr.js"></script>
 <script src="/_bower_components/jquery/dist/jquery.js"></script>
@@ -14,11 +14,11 @@
 <script src="/scripts/plugins.js"></script>
 <script src="/startup/common-files/js/page-transitions.js"></script>
 <script src="/startup/common-files/js/startup-kit.js"></script>
+<!-- endbuild -->
+
 {% for script in page.scripts %}
   <script src="{{ script }}"></script>
 {% endfor %}
-<!-- endbuild -->
-
 
 
 
