@@ -71,23 +71,23 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: true,
-          // base: [
-          // '.tmp',
-          // '.jekyll',
-          // '<%= yeoman.app %>'
-          // ],
+          base: [
+          '.tmp',
+          '.jekyll',
+          '<%= yeoman.app %>'
+          ],
 
-          middleware: function(connect, options, middlewares) {
-            return [
-              connect.static('.tmp'),
-              connect.static('.jekyll'),
-              connect().use('/_bower_components', connect.static('app/_bower_components')),
-              connect().use('/fonts', connect.static('app/_bower_components/bootstrap/dist/fonts')),
-              connect().use('/startup', connect.static('startup')),
-              connect.static('app'),
-              //connect.static('<%= yeoman.app %>'),
-            ];
-          },
+//           middleware: function(connect, options, middlewares) {
+//             return [
+//               connect.static('.tmp'),
+//               connect.static('.jekyll'),
+//               connect().use('/_bower_components', connect.static('app/_bower_components')),
+//               connect().use('/fonts', connect.static('app/_bower_components/bootstrap/dist/fonts')),
+//               connect().use('/startup', connect.static('startup')),
+//               connect.static('app'),
+//               //connect.static('<%= yeoman.app %>'),
+//             ];
+//           },
         }
       },
       dist: {
@@ -356,22 +356,16 @@ module.exports = function (grunt) {
 //         '_bower_components/modernizr/modernizr.js',
 //         '_bower_components/bootstrap/dist/js/bootstrap.js',
         'favicon.ico',
-        'apple-touch*.png'
+        'apple-touch*.png',
+          
+        'startup/common-files/**',
+        'startup/flat-ui/**',
+        '!startup/flat-ui/.git'
+
         ],
         dest: '<%= yeoman.dist %>'
       },
       {
-        expand: true,
-        dot: true,
-        cwd: 'startup',
-        dest: '<%= yeoman.dist %>/startup',
-        src: [
-        'common-files/**',
-        'flat-ui/**',
-        '!flat-ui/.git'
-        ]
-      },
-                    {
         expand: true,
         dot: true,
         dest: '<%= yeoman.dist %>/',
