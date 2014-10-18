@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="/styles/startup.css"/>
 <!-- endbuild -->
 
+{% if page.styles %}
+<!-- build:css({app,.tmp}) /styles{{page.url}}.css -->
 {% for style in page.styles %}
   <link rel="stylesheet" href="{{ style }}"/>
 {% endfor %}
-
+<!-- endbuild -->
+{% endif %}

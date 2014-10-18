@@ -76,18 +76,6 @@ module.exports = function (grunt) {
           '.jekyll',
           '<%= yeoman.app %>'
           ],
-
-//           middleware: function(connect, options, middlewares) {
-//             return [
-//               connect.static('.tmp'),
-//               connect.static('.jekyll'),
-//               connect().use('/_bower_components', connect.static('app/_bower_components')),
-//               connect().use('/fonts', connect.static('app/_bower_components/bootstrap/dist/fonts')),
-//               connect().use('/startup', connect.static('startup')),
-//               connect.static('app'),
-//               //connect.static('<%= yeoman.app %>'),
-//             ];
-//           },
         }
       },
       dist: {
@@ -101,18 +89,11 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          middleware: function(connect, options, middlewares) {
-            return [
-            connect.static('.tmp'),
-            connect.static('.jekyll'),
-            connect.static('test'),
-            connect().use('/_bower_components', connect.static('app/_bower_components')),
-            connect().use('/fonts', connect.static('app/_bower_components/bootstrap/dist/fonts')),
-            connect().use('/startup', connect.static('startup')),
-            connect.static('app'),
-            //connect.static('<%= yeoman.app %>'),
-            ];
-          },
+          base: [
+          '.tmp',
+          '.jekyll',
+          '<%= yeoman.app %>'
+          ],
         }
       }
     },
@@ -169,7 +150,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           cleancss: true,
-          report: 'gzip'
+//           report: 'gzip'
         },
         files: [{
           expand: true,
@@ -278,7 +259,7 @@ module.exports = function (grunt) {
     options: {
       dest: '<%= yeoman.dist %>'
     },
-    html: ['<%= yeoman.dist %>/index.html']
+    html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/_includes/**', '!<%= yeoman.dist %>/startup/**/*']
   },
   usemin: {
     options: {
@@ -298,7 +279,7 @@ module.exports = function (grunt) {
       files: [{
         expand: true,
         cwd: '<%= yeoman.dist %>',
-        src: ['**/*.html', '!startup/**'],
+        src: ['**/*.html', '!<%= yeoman.dist %>/startup/**'],
         dest: '<%= yeoman.dist %>',
       }]
     }
@@ -360,7 +341,7 @@ module.exports = function (grunt) {
         'apple-touch*.png',
           
         'startup/common-files/**',
-        'startup/flat-ui/**',
+        'startup/flat-ui/*/**/*',
         '!startup/flat-ui/.git'
 
         ],

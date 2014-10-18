@@ -11,7 +11,7 @@ author:
   email: alexey.titov@dintels.ru
 
 # Grunt handles images and assets.
-exclude: ['images', 'styles', 'scripts', 'fonts',
+exclude: ['images', 'styles', 'scripts', 'fonts', 'startup',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
 include: ['.htaccess']
