@@ -1,39 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>dintels.github.com/jekyll/update/2014/10/10/yo-jekyllrb.html</loc>
-        <lastmod>2014-10-16T07:49:45+00:00</lastmod>
+        <loc>dintels.ru/blog/2014/10/10/yo-jekyllrb</loc>
+        <lastmod>2014-10-22T11:28:43+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/jekyll/update/2014/10/10/welcome-to-jekyll.html</loc>
-        <lastmod>2014-10-16T07:49:45+00:00</lastmod>
+        <loc>dintels.ru/blog/2014/10/10/welcome-to-jekyll</loc>
+        <lastmod>2014-10-22T11:28:43+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/portfolio/</loc>
-        <lastmod>2014-10-18T16:23:17+00:00</lastmod>
+        <loc>dintels.ru/vacuum/</loc>
+        <lastmod>2014-10-22T10:36:59+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/</loc>
-        <lastmod>2014-10-18T16:21:45+00:00</lastmod>
+        <loc>dintels.ru/</loc>
+        <lastmod>2015-03-13T21:28:32+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/vacuum/</loc>
-        <lastmod>2014-10-18T16:23:01+00:00</lastmod>
+        <loc>dintels.ru/portfolio/</loc>
+        <lastmod>2014-10-22T10:36:59+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/smart-home/</loc>
-        <lastmod>2014-10-18T16:23:11+00:00</lastmod>
+        <loc>dintels.ru/blog/</loc>
+        <lastmod>2014-10-22T11:56:35+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/blog/</loc>
-        <lastmod>2014-10-18T16:23:24+00:00</lastmod>
+        <loc>dintels.ru/smart-home/</loc>
+        <lastmod>2014-10-22T10:36:59+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/index_new.html</loc>
-        <lastmod>2014-10-18T16:22:51+00:00</lastmod>
+        <loc>dintels.ru/index_new.html</loc>
+        <lastmod>2014-10-22T10:36:59+00:00</lastmod>
     </url>
     <url>
-        <loc>dintels.github.com/index_old.html</loc>
-        <lastmod>2014-10-18T16:22:46+00:00</lastmod>
+        <loc>dintels.ru/index_old.html</loc>
+        <lastmod>2014-10-22T10:36:59+00:00</lastmod>
     </url>
 </urlset>
