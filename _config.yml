@@ -25,3 +25,8 @@ markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
 pygments: true
+
+#blog
+permalink:     /blog/:year/:month/:day/:title
+paginate_path: "blog/page:num"
+paginate: 5

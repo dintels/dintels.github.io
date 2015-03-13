@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Yo Jekyll!"
+autor: Иван Петрович
 categories: jekyll update
 ---
 

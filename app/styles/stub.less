@@ -1,10 +1,30 @@
+// There is a path to Startup framework
+@startup-basePath: "/app/startup/";
+@import '@{startup-basePath}flat-ui/less/variables.less';
+
 .content-23 {
   background-size: cover !important;
   background: url("/images/lamps.jpg") no-repeat fixed 50% 50% #1b1f23;
-  
+
   .hero-unit h1 {
     line-height: 50px;
     /* ФОН */
     background: rgba(128, 128, 128, 0.9);
   }
+}
+.project-1#retro-link  {
+  background-image: url("/images/doorknob.jpg");
+  h1, p {
+    font-family: 'Kelly Slab', cursive;
+  }
+}
+
+.content-12 {
+  padding-bottom: 0;
+}
+.content-12 .btn-wide {
+  background-color:@clouds;
+}
+.content-12 .btn-wide:hover, .content-12 .btn-wide:active, .content-12 .btn-wide.active {
+  background-color:@wet-asphalt;
 }
