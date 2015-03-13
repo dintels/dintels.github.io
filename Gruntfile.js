@@ -75,7 +75,7 @@ module.exports = function (grunt) {
           '.tmp',
           '.jekyll',
           '<%= yeoman.app %>'
-          ],
+          ]
         }
       },
       dist: {
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
           '.tmp',
           '.jekyll',
           '<%= yeoman.app %>'
-          ],
+          ]
         }
       }
     },
@@ -145,11 +145,11 @@ module.exports = function (grunt) {
     },
     less: {
       options: {
-        paths: ['<%= yeoman.app %>/_bower_components'],
+        paths: ['<%= yeoman.app %>/_bower_components']
       },
       dist: {
         options: {
-          cleancss: true,
+          cleancss: true
 //           report: 'gzip'
         },
         files: [{
@@ -181,14 +181,14 @@ module.exports = function (grunt) {
       app: {
         // ignorePath: /^\/|\.\.\//,
         ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/,
-        src: ['<%= yeoman.app %>/_includes/styles.html', '<%= yeoman.app %>/_includes/scripts.html'],
+        src: ['<%= yeoman.app %>/_includes/styles.html', '<%= yeoman.app %>/_includes/scripts.html']
         //exclude: ['<%= yeoman.app %>/_bower_components/bootstrap/dist/js/bootstrap.js']
         // exclude: ['<%= yeoman.app %>/_bower_components/jquery/dist/jquery.js']
       },
       less: {
       src: ['<%= yeoman.app %>/styles/{,*/}*.less'],
       //ignorePath: /(\.\.\/){1,2}bower_components\//,
-      ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/,
+      ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/
     }
   },
   autoprefixer: {
@@ -495,7 +495,7 @@ grunt.registerTask('serve', function (target) {
   'cssmin',
   'uglify',
   'imagemin',
-  'svgmin',
+  //'svgmin',
   'filerev',
   'usemin',
   'htmlmin'
