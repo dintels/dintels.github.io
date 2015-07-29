@@ -3,15 +3,14 @@
 # 2. config.build.yml
 # 3. config.yml
 
-name: dintels.ru
-url: dintels.ru
-description: Сайт ООО "Домашние интеллектуальные системы"
+name: yarwifi.ru
+description: 
 author:
-  name: Alexey Titov
-  email: alexey.titov@dintels.ru
+  name: Dintels
+  email: mail@dintels.ru
 
 # Grunt handles images and assets.
-exclude: ['images', 'styles', 'scripts', 'fonts', 'startup', 'temp',
+exclude: ['images', 'styles', 'scripts', 'fonts', 'startup',
           '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
 
 include: ['.htaccess']
@@ -24,9 +23,4 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-# pygments: true
-
-#blog
-permalink:     /blog/:year/:month/:day/:title
-paginate_path: "blog/page:num"
-paginate: 5
+highlighter: false
