@@ -27,6 +27,7 @@ GEM
     execjs (2.2.2)
     fast-stemmer (1.0.2)
     ffi (1.9.6)
+    ffi (1.9.6-x64-mingw32)
     hitimes (1.2.2)
     jekyll (2.4.0)
       classifier-reborn (~> 2.0)
@@ -79,8 +80,12 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   compass (>= 0.12)
   jekyll (>= 2.0.0)
   redcarpet
+
+BUNDLED WITH
+   1.10.6
