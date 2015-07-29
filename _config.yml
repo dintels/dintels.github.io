@@ -24,7 +24,7 @@ show_drafts: true
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-pygments: true
+# pygments: true
 
 #blog
 permalink:     /blog/:year/:month/:day/:title
