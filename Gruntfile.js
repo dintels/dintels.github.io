@@ -19,8 +19,6 @@ module.exports = function (grunt) {
     yeoman: {
       app: 'app',
       dist: 'dist',
-      public: 'dist/public',
-      srv: 'srv'
     },
     watch: {
       sass: {
@@ -64,7 +62,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           server: {
-            baseDir: "<%= yeoman.public %>"
+            baseDir: "<%= yeoman.dist %>"
           }
         }
       },
@@ -177,7 +175,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          dest: '<%= yeoman.public %>'
+          dest: '<%= yeoman.dist %>'
         }
       },
       server: {
@@ -194,16 +192,16 @@ module.exports = function (grunt) {
     },
     useminPrepare: {
       options: {
-        dest: '<%= yeoman.public %>'
+        dest: '<%= yeoman.dist %>'
       },
-      html: '<%= yeoman.public %>/index.html'
+      html: '<%= yeoman.dist %>/index.html'
     },
     usemin: {
       options: {
-        assetsDirs: ['<%= yeoman.public %>', '<%= yeoman.public %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       },
-      html: ['<%= yeoman.public %>/**/*.html'],
-      css: ['<%= yeoman.public %>/styles/**/*.css']
+      html: ['<%= yeoman.dist %>/**/*.html'],
+      css: ['<%= yeoman.dist %>/styles/**/*.css']
     },
     htmlmin: {
       dist: {
@@ -215,9 +213,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.public %>',
+          cwd: '<%= yeoman.dist %>',
           src: '**/*.html',
-          dest: '<%= yeoman.public %>'
+          dest: '<%= yeoman.dist %>'
         }]
       }
     },
@@ -240,9 +238,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= yeoman.public %>',
+          cwd: '<%= yeoman.dist %>',
           src: '**/*.{jpg,jpeg,png}',
-          dest: '<%= yeoman.public %>'
+          dest: '<%= yeoman.dist %>'
         }]
       }
     },
@@ -250,9 +248,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.public %>',
+          cwd: '<%= yeoman.dist %>',
           src: '**/*.svg',
-          dest: '<%= yeoman.public %>'
+          dest: '<%= yeoman.dist %>'
         }]
       }
     },
@@ -275,15 +273,6 @@ module.exports = function (grunt) {
             'favicon.ico',
             'apple-touch*.png'
           ],
-          dest: '<%= yeoman.public %>'
-        },
-        {
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.srv %>',
-          src: [
-             '**/*'
-          ],
           dest: '<%= yeoman.dist %>'
         },
         {
@@ -303,10 +292,10 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           src: [
-            '<%= yeoman.public %>/scripts/**/*.js',
-            '<%= yeoman.public %>/styles/**/*.css',
-            '<%= yeoman.public %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.public %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            '<%= yeoman.dist %>/scripts/**/*.js',
+            '<%= yeoman.dist %>/styles/**/*.css',
+            '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
