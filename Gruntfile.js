@@ -418,7 +418,7 @@ module.exports = function (grunt) {
     //'check',
     'test',
     'build',
-    'buildcontrol:heroku'
+    'buildcontrol'
     ]);
 
   grunt.registerTask('default', [
