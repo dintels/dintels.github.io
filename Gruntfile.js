@@ -194,14 +194,14 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= yeoman.dist %>'
       },
-      html: '<%= yeoman.dist %>/index.html'
+      html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/_includes/**', '!<%= yeoman.dist %>/startup/**/*']
     },
     usemin: {
       options: {
         assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       },
-      html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/styles/**/*.css']
+      html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/startup/**/*'],
+      css: ['<%= yeoman.dist %>/styles/**/*.css', '!<%= yeoman.dist %>/startup/**/*']
     },
     htmlmin: {
       dist: {
@@ -214,7 +214,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.html',
+          src: ['**/*.html', '!<%= yeoman.dist %>/startup/**'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.{jpg,jpeg,png}',
+          src: ['**/*.{jpg,jpeg,png}', '!startup/**', '!images/vacuum/**', '!images/illustrations/**'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -249,7 +249,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
+          src: ['**/*.svg', '!startup/**' ],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -274,6 +274,18 @@ module.exports = function (grunt) {
             'apple-touch*.png'
           ],
           dest: '<%= yeoman.dist %>'
+        },
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/startup',
+          dest: '<%= yeoman.dist %>/startup',
+          src: [
+          'common-files/**',
+          'flat-ui/*/**/*',
+          '!flat-ui/.git',
+           '!*/less/**', // ignore less folders
+          ]
         },
         {
           expand: true,
