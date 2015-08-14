@@ -94,9 +94,9 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '<%= yeoman.dist %>/*',
-            // Running Jekyll also cleans the target directory.  Exclude any
-            // non-standard `keep_files` here (e.g., the generated files
-            // directory from Jekyll Picture Tag).
+          // Running Jekyll also cleans the target directory.  Exclude any
+          // non-standard `keep_files` here (e.g., the generated files
+          // directory from Jekyll Picture Tag).
             '!<%= yeoman.dist %>/.git*'
           ]
         }]
@@ -142,13 +142,13 @@ module.exports = function (grunt) {
       dist: {
         options: {
           cleancss: true
-//           report: 'gzip'
+          //           report: 'gzip'
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/styles',
           src: '*.less',
-//           dest: '<%= yeoman.dist %>/styles',
+          //           dest: '<%= yeoman.dist %>/styles',
           dest: '.tmp/styles',
           ext: '.css'
         }]
@@ -261,28 +261,40 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '<%= yeoman.app %>',
           src: [
-            // Jekyll processes and moves HTML and text files.
-            // Usemin moves CSS and javascript inside of Usemin blocks.
-            // Copy moves asset files and directories.
+          // Jekyll processes and moves HTML and text files.
+          // Usemin moves CSS and javascript inside of Usemin blocks.
+          // Copy moves asset files and directories.
             'images/**/*',
             'fonts/**/*',
-            // Like Jekyll, exclude files & folders prefixed with an underscore.
+          // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}',
-            // Explicitly add any files your site needs for distribution here.
+          // Explicitly add any files your site needs for distribution here.
             '_bower_components/jquery/jquery.min.js',
             'favicon.ico',
             'apple-touch*.png'
           ],
           dest: '<%= yeoman.dist %>'
         },
-        {
-          expand: true,
-          dot: true,
-          src: [
-             'package.json'
-          ],
-          dest: '<%= yeoman.dist %>'
-        }]
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>/startup',
+            dest: '<%= yeoman.dist %>/startup',
+            src: [
+              'common-files/**',
+              'flat-ui/*/**/*',
+              '!flat-ui/.git',
+              '!*/less/**', // ignore less folders
+            ]
+          },
+          {
+            expand: true,
+            dot: true,
+            dest: '<%= yeoman.dist %>/',
+            src: [
+              '.nojekyll',
+            ]
+          }]
       }
     },
     filerev: {
@@ -374,9 +386,9 @@ module.exports = function (grunt) {
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'browserSync:test'
+    //   'clean:server',
+    //   'concurrent:test',
+    //   'browserSync:test'
   ]);
 
   grunt.registerTask('check', [
@@ -390,7 +402,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    // Jekyll cleans files from the target directory, so must run first
+  // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',
@@ -398,18 +410,18 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'imagemin',
-    //'svgmin',
+  //'svgmin',
     'filerev',
     'usemin',
     'htmlmin'
-    ]);
+  ]);
 
   grunt.registerTask('deploy', [
-    //'check',
+  //'check',
     'test',
     'build',
     'buildcontrol'
-    ]);
+  ]);
 
   grunt.registerTask('default', [
     'check',
