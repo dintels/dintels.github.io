@@ -194,14 +194,14 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= yeoman.dist %>'
       },
-      html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/_includes/**', '!<%= yeoman.dist %>/startup/**/*']
+      html: '<%= yeoman.dist %>/index.html'
     },
     usemin: {
       options: {
         assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       },
-      html: ['<%= yeoman.dist %>/**/*.html', '!<%= yeoman.dist %>/startup/**/*'],
-      css: ['<%= yeoman.dist %>/styles/**/*.css', '!<%= yeoman.dist %>/startup/**/*']
+      html: ['<%= yeoman.dist %>/**/*.html'],
+      css: ['<%= yeoman.dist %>/styles/**/*.css']
     },
     htmlmin: {
       dist: {
@@ -214,7 +214,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['**/*.html', '!<%= yeoman.dist %>/startup/**'],
+          src: '**/*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['**/*.{jpg,jpeg,png}', '!startup/**', '!images/vacuum/**', '!images/illustrations/**'],
+          src: '**/*.{jpg,jpeg,png}',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -249,7 +249,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['**/*.svg', '!startup/**' ],
+          src: '**/*.svg',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -278,18 +278,6 @@ module.exports = function (grunt) {
         {
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.app %>/startup',
-          dest: '<%= yeoman.dist %>/startup',
-          src: [
-          'common-files/**',
-          'flat-ui/*/**/*',
-          '!flat-ui/.git',
-           '!*/less/**', // ignore less folders
-          ]
-        },
-        {
-          expand: true,
-          dot: true,
           src: [
              'package.json'
           ],
@@ -307,7 +295,8 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/scripts/**/*.js',
             '<%= yeoman.dist %>/styles/**/*.css',
             '<%= yeoman.dist %>/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}',
+            '!startup/**'
           ]
         }]
       }
